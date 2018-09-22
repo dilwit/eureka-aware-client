@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-cloud-ms-eureka-aware-client
+    name: eureka-aware-client
   profiles:
     active: dev
 server:
@@ -14,5 +14,6 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://eureka:123456789@localhost:8761/eureka/}
   instance:
-    hostname: localhost
     preferIpAddress: true
+    # This allows multiple localhost instances to be registered with eureka.
+    instance-id: ${spring.application.name}:${random.int}

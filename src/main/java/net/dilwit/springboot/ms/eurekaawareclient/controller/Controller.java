@@ -8,7 +8,7 @@ public class Controller {
 
     @RequestMapping("/greeting")
     public String greeting() {
-        return "Hello from EurekaClient!";
+        return "Hello from EurekaAwareClient!";
     }
 
 }
